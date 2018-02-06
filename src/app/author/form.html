@@ -1,0 +1,22 @@
+
+<form (ngSubmit)="handleFormSubmit()" [formGroup]="authorForm">
+<div class="form-group">
+<label for="authorId">AuthorId</label>
+<input type="text" class="form-control" formControlName="authorId" >
+<div class="alert alert-danger" *ngIf="authorForm.get('authorId').touched && authorForm.get('authorId').invalauthorId ">
+<div *ngIf="authorForm.get('authorId').errors.required">
+    Enter correct authorId!!!!
+</div>
+</div>
+
+
+<label for="authorName">AuthorName</label>
+<input type="text" class="form-control" formControlName="authorName" >
+<div class="alert alert-danger" *ngIf="authorForm.get('authorName').touched && authorForm.get('authorName').invalauthorId ">
+<div *ngIf="authorForm.get('authorName').errors.required">
+    Enter correct authorName!!!!
+</div>
+</div>
+<button class="btn btn-primary" type="submit" [disabled]="authorForm.invalauthorId">Submit</button> 
+</div> 
+</form>

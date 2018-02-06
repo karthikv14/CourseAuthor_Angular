@@ -1,0 +1,22 @@
+
+<form (ngSubmit)="handleFormSubmit()" [formGroup]="courseForm">
+<div class="form-group">
+<label for="id">CourseId</label>
+<input type="text" class="form-control" formControlName="id" >
+<div class="alert alert-danger" *ngIf="courseForm.get('id').touched && courseForm.get('id').invalid ">
+<div *ngIf="courseForm.get('id').errors.required">
+    Enter correct courseId!!!!
+</div>
+</div>
+
+
+<label for="name">CourseName</label>
+<input type="text" class="form-control" formControlName="name" >
+<div class="alert alert-danger" *ngIf="courseForm.get('name').touched && courseForm.get('name').invalid ">
+<div *ngIf="courseForm.get('name').errors.required">
+    Enter correct courseName!!!!
+</div>
+</div>
+<button class="btn btn-primary" type="submit" [disabled]="courseForm.invalid">Submit</button> 
+</div> 
+</form>
